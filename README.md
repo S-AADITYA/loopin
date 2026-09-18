@@ -35,6 +35,15 @@ npm run dev
 
 Open `http://localhost:3000`, enter your email, and click the magic link that arrives in your inbox.
 
+### One-time: claim a venue
+
+The seeded venues start with no owner, and the Restaurant and Intelligence views
+only show orders and inventory for venues *you* own. Because the venues update
+policy is `auth.uid() = owner_id`, an unowned venue can't be claimed from the app
+itself — so after your first sign-in, open **SQL Editor** and run
+[`supabase/claim-venue.sql`](supabase/claim-venue.sql) (set your email at the top
+first). It assigns the venues to you and seeds a starting inventory.
+
 ## 4. Deploy to Vercel
 
 **Option A — one-time manual deploy:**
@@ -74,6 +83,7 @@ A weekly + per-PR dependency security audit (`.github/workflows/security.yml`) r
 app/                Next.js App Router — layout, global styles, main page (3 views)
 lib/supabase.ts       Supabase client (browser-safe, anon key only)
 supabase/schema.sql   Full DB schema + RLS policies + seed data — run this in Supabase
+supabase/claim-venue.sql  One-time: claim venues + seed inventory after first sign-in
 .github/workflows/    CI (lint/build) + CD (Vercel deploy) + security audit
 .env.example          Copy to .env.local and fill in your project's keys
 eslint.config.mjs     ESLint 9 flat config (next/core-web-vitals)
