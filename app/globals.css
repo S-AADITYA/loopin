@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #0b0d12;
+  color: #eef1f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  background: #12151c;
+  border: 1px solid #242938;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.stat {
+  background: #171b24;
+  border: 1px solid #242938;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #171b24;
+  border: 1px solid #242938;
+  color: #9aa3b5;
+  font-weight: 600;
+}
